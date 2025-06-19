@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Campañas - Famosos.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Calculadora de Campañas de Influencers</h1>
+        <p>Proyecta el desglose de la inversión, costos, ganancia y vistas.</p>
+
+        <div class="input-group">
+            <div class="input-item">
+                <label for="inversion_total_mxn">Inversión Total (MXN):</label>
+                <input type="number" id="inversion_total_mxn" value="1000000" min="0" step="10000">
+            </div>
+            <div class="input-item">
+                <label for="cpv_header_input">CPV de Campaña (Ref. USD):</label>
+                <input type="number" id="cpv_header_input" value="0.046" min="0" step="0.001">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="input-item">
+                <label for="influencers_cost_mxn_input">Costo de Influencers (MXN):</label>
+                <input type="number" id="influencers_cost_mxn_input" value="152250" min="0" step="1000">
+            </div>
+            <div class="input-item">
+                <label for="pauta_media_mxn_input">Pauta en Media (MXN):</label>
+                <input type="number" id="pauta_media_mxn_input" value="217391" min="0" step="1000">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="input-item-full">
+                <label for="plataforma_pauta">Plataforma Principal para Vistas por Pauta:</label>
+                <select id="plataforma_pauta">
+                    <option value="Instagram">Instagram</option>
+                    <option value="TikTok" selected>TikTok</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="calcularBtn">Calcular Proyección Detallada</button>
+
+        <div class="info-box">
+            <h3>Estructura de Costos Fijos del Modelo</h3>
+            <ul>
+                <li><strong>Tasa de Cambio (MXN/USD):</strong> <span id="trm-display"></span></li>
+                <li><strong>Famosos Ads Revenue:</strong> 70% de la Inversión Total</li>
+                <li><strong>CMI Revenue:</strong> 30% de la Inversión Total</li>
+                <li><strong>EKN Fee:</strong> 13% sobre Famosos Ads Revenue</li>
+                <li><strong>CPM Instagram:</strong> <span id="cpm-ig-display"></span></li>
+                <li><strong>CPM TikTok:</strong> <span id="cpm-tt-display"></span></li>
+            </ul>
+        </div>
+
+        <div id="resultados" class="results-section">
+            <h2>Resultados de la Proyección</h2>
+
+            <h3>Desglose General de la Inversión Total:</h3>
+            <table class="results-table" id="table-inversion-general">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Monto (MXN)</th>
+                        <th>Monto (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+
+            <h3>Análisis de Famosos Ads Revenue (Base de la Agencia):</h3>
+            <table class="results-table" id="table-famosos-ads">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Monto (MXN)</th>
+                        <th>Monto (USD)</th>
+                        <th>Porcentaje (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+
+            <h3>Proyección de Vistas y CPV Global:</h3>
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-label" id="views-label">Vistas Estimadas por Pauta en [Plataforma]</span>
+                    <span class="metric-value" id="views-value">0</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">CPV Global Calculado de Campaña (USD)</span>
+                    <span class="metric-value" id="cpv-calculated-value">$0.0000</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">CPV de Referencia (Input USD)</span>
+                    <span class="metric-value" id="cpv-reference-value">$0.000</span>
+                </div>
+            </div>
+
+            <div id="resumen-final" class="summary-box">
+                </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    </body>
+    </html>

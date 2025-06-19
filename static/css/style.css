@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #0056b3;
+    text-align: center;
+}
+h2, h3 {
+    color: #0056b3;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.input-item {
+    flex: 1;
+    min-width: 200px; /* Ancho mínimo para cada input */
+}
+.input-item-full {
+    flex: 1 1 100%; /* Ocupa todo el ancho */
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* El botón ocupa todo el ancho */
+    margin-top: 15px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.results-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.results-table th,
+.results-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.results-table th {
+    background-color: #f2f2f2;
+}
+.results-table td:nth-child(2),
+.results-table td:nth-child(3) {
+    text-align: right; /* Alineación para montos */
+}
+.results-table td:last-child {
+    text-align: center; /* Alineación para porcentajes */
+}
+.metrics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.metric-item {
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-basis: 30%; /* Para 3 columnas, ajusta según necesidad */
+}
+.metric-label {
+    font-size: 0.9em;
+    color: #555;
+}
+.metric-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+}
+.summary-box {
+    background-color: #d4edda;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.summary-box strong {
+    color: #155724;
+}
+.results-section.hidden {
+    display: none;
+}
